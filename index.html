@@ -11,6 +11,8 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/default.css" rel="stylesheet">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animsition.min.css">
+
     <title>Mb Group S.A.C</title>
     <script src="http://use.typekit.net/pjg2vww.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
@@ -24,60 +26,23 @@
 
 
 
-      <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand"  target="_blank">
-              <img src="assets/images/logo_orange1.png" alt="Pathgather"></img>
-            </a>
-          </div>
-          <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li>
-                <a target="_blank">
-                  <i class="fa fa-github"></i>
-
-                </a>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                <a target="_blank">
-                  <span class="label label-info"> </span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-
-
-
-      <div class="container">
-        <section class="header">
-          <h2>SIKUFLOWER</h2>
-          <h4></h4>
-          <button >
-            <span>SIKUFLOWER</span>
-          </button>
-        </section>
-        <section class="instructions">
-
-        </section>
-      </div>
-
 
     </div>
 
+ 
 
+   <div class="animsition" >
+
+    
  <h4 class='close-please-wait' ng-show="show_demo">
-      <a class='label label-info' ng-click="toggleDemo()" href='#' onclick='return false;'>
+      <a  class="animsition-link" href='principal.html' >
         <i class="fa fa-times"></i>
-        <span>Click aqui.</span>
+        <span>Close demo</span>
       </a>
-
     </h4>
+   
+   </div>
+ 
 
 
 
@@ -86,10 +51,45 @@
       window.loading_screen = window.pleaseWait({
         logo: "assets/images/logo_orange.png",
         backgroundColor: '#FFFFFF',
-        loadingHtml: "<p class='loading-message'></p><div class='sk-spinner sk-spinner-wave'><div class='sk-rect1'></div><div class='sk-rect2'></div><div class='sk-rect3'></div><div class='sk-rect4'></div><div class='sk-rect5'></div></div>"
+        loadingHtml: "   <p class='loading-message'></p><div class='sk-spinner sk-spinner-wave'><div class='sk-rect1'></div><div class='sk-rect2'></div><div class='sk-rect3'></div><div class='sk-rect4'></div><div class='sk-rect5'></div></div>"
       });
+
     </script>
+
+     
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
     <script src="assets/js/default.js"></script>
+      <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- animsition.js -->
+    <script src="js/animsition.min.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+  $(".animsition").animsition({
+    inClass: 'flip-in-y-fr',
+    outClass: 'flip-out-y-fr',
+    inDuration: 1500,
+    outDuration: 800,
+    linkElement: '.animsition-link',
+    // e.g. linkElement: 'a:not([target="_blank"]):not([href^=#])'
+    loading: true,
+    loadingParentElement: 'body', //animsition wrapper element
+    loadingClass: 'animsition-loading',
+    loadingInner: '', // e.g '<img src="loading.svg" />'
+    timeout: false,
+    timeoutCountdown: 5000,
+    onLoadEvent: true,
+    browser: [ 'animation-duration', '-webkit-animation-duration'],
+    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    overlay : false,
+    overlayClass : 'animsition-overlay-slide',
+    overlayParentElement : 'body',
+    transition: function(url){ window.location.href = url; }
+  });
+});
+      
+    </script>
   </body>
 </html>
