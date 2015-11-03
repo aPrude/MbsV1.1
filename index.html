@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="pleaseWaitApp">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">  
+    <!-- <meta http-equiv="refresh" content="5;url='pages/principal.html'"> -->
     <meta name="description" content="PleaseWait is a small Javascript library that shows a beautiful loading page for your SPA while it loads.">
     <meta name="keywords" content="pleasewait, loading, spa, indicator, javascript, css, pathgather, css3, github, html5">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -19,40 +19,71 @@
 
 
 
-  <body ng-controller="MainCtrl">
+  <body ng-controller="MainCtrl" style="background-Color:#B7CBFF">
     <div class="inner">
 
 
-
-
-
-
-
-
-
+    <ul class="dl-submenu">
+              <li data-animation="58">
+                <input id="btn" type="button" value="envio" onclick="window.location.href='pages/principal.html';" ></input>
+                </li>           
+             </ul>  
 
     </div>
 
 
- <h4 class='close-please-wait' >
-      <a class='label label-info'  href='principal.html' >
-        <i class="fa fa-times"></i>
-        <span> Ingresar aqui!</span>
-      </a>
-
-    </h4>
-
-
-
     <script type="text/javascript" src="assets/js/please-wait.min.js"></script>
+    <script src="js/jquery.js"></script>
     <script type="text/javascript">
       window.loading_screen = window.pleaseWait({
         logo: "assets/images/logo_orange.png",
         backgroundColor: '#FFFFFF',
-        loadingHtml: "<p class='loading-message'></p><div class='sk-spinner sk-spinner-wave'><div class='sk-rect1'></div><div class='sk-rect2'></div><div class='sk-rect3'></div><div class='sk-rect4'></div><div class='sk-rect5'></div></div>"
+        loadingHtml: " <p class='loading-message'></p><div class='sk-spinner sk-spinner-wave'><div class='sk-rect1'></div><div class='sk-rect2'></div><div class='sk-rect3'></div><div class='sk-rect4'></div><div class='sk-rect5'></div></div>"
       });
+
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
     <script src="assets/js/default.js"></script>
+    
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            // indicamos que se ejecuta la función a los 5 segundos de haberse
+            // cargado la pagina
+            
+           $("body").css("display", "none");
+
+            
+         
+
+            $("body").fadeIn(2000);
+           
+            setTimeout(clickbutton,5000);
+
+
+ 
+            function clickbutton()
+            {
+              
+
+                // simulamos el click del mouse en el boton del formulario
+                console.log("asdasdasdasdasdas");
+                $("body").fadeOut(3000);  
+                setTimeout(1000);
+                $("#btn").click();
+
+             
+            }
+
+           
+
+          
+        });
+
+         function enviar(){
+              window.location.href='pages/principal.html';
+            }
+
+    </script>
   </body>
 </html>
